@@ -211,6 +211,7 @@ export function addDefaultArgs(
     const str = commandInfoMapper.formatArgumentArray(
       argDefs.map(argDef => fswCommandArgDefault(argDef, commandDictionary.enumMap)),
       commandNode,
+      view,
     );
     const transaction = view.state.update({
       changes: { from: insertPosition, insert: str },
@@ -253,7 +254,7 @@ export function addDefaultVariableArgs(
 ) {
   const insertPosition = commandInfoMapper.getArgumentAppendPosition(commandNode);
   if (insertPosition !== undefined) {
-    const str = commandInfoMapper.formatArgumentArray(getDefaultVariableArgs(parameters), commandNode);
+    const str = commandInfoMapper.formatArgumentArray(getDefaultVariableArgs(parameters), commandNode, view);
     const transaction = view.state.update({
       changes: { from: insertPosition, insert: str },
     });

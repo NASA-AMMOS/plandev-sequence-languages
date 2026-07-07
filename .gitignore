@@ -143,3 +143,5 @@ build/
 # IDE files
 .vscode/
 .idea/
+
+.DS_Store

@@ -1,0 +1,17 @@
+; F-Prime Sequence Example
+; Based on https://nasa.github.io/fprime/UsersGuide/gds/seqgen.html
+
+; Absolute time command
+A2015-075T22:32:40.123 cmdDisp.CMD_NO_OP
+
+; Relative time command with string argument
+R01:00:01.050 CMD_NO_OP_STRING "Awesome string!" ; And a nice comment too
+
+; Command with numeric arguments
+R00:00:05.000 SET_VALUE 42, 3.14159
+
+; Command with hex arguments
+R00:00:10.500 MEMORY_WRITE 0xFF, 0x1234ABCD
+
+; Another absolute time command
+A2015-075T23:00:00.000 module.submodule.COMPLEX_CMD 1, 2, 3, "test"
