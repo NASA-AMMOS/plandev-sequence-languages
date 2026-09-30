@@ -1,7 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { EditorState } from '@codemirror/state';
 import { hoverTooltip } from '@codemirror/view';
-import type { CommandDictionary, FswCommand } from '@nasa-jpl/aerie-ampcs';
+import type { CommandDictionary, FswCommand } from '@nasa-jpl/plandev-ampcs';
 import { fprimeTooltip } from './fprime-tooltip.js';
 
 // Mock PhoenixResources for testing

@@ -1,6 +1,6 @@
 import type { Completion, CompletionContext, CompletionResult } from '@codemirror/autocomplete';
 import { syntaxTree } from '@codemirror/language';
-import type { CommandDictionary } from '@nasa-jpl/aerie-ampcs';
+import type { CommandDictionary } from '@nasa-jpl/plandev-ampcs';
 import { FPRIME_NODES } from './fprime-grammar-constants.js';
 import { fswCommandArgDefault } from '../../utils/sequence-utils.js';
 

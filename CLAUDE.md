@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a TypeScript library providing language support for NASA's Aerie Phoenix Sequence Editor. It implements parsers, linters, formatters, and CodeMirror extensions for multiple sequence languages used in spacecraft operations.
+This is a TypeScript library providing language support for NASA's SeqDev Sequence Editor. It implements parsers, linters, formatters, and CodeMirror extensions for multiple sequence languages used in spacecraft operations.
 
 **Supported Languages:**
 - **SeqN** (`.seqN.txt`) - Primary input/authoring language
@@ -131,9 +131,9 @@ Both include TypeScript declarations. The package.json exports field provides co
 
 - **@lezer/common, @lezer/lr**: Core Lezer parsing infrastructure
 - **@codemirror/***: Editor extensions (autocomplete, commands, language, lint, view)
-- **@nasa-jpl/aerie-ampcs**: Command dictionary types and utilities
+- **@nasa-jpl/plandev-ampcs**: Command dictionary types and utilities
 - **@nasa-jpl/seq-json-schema**: SeqJSON type definitions
-- **@nasa-jpl/aerie-time-utils**: Time parsing and validation
+- **@nasa-jpl/plandev-time-utils**: Time parsing and validation
 
 ## Development Notes
 

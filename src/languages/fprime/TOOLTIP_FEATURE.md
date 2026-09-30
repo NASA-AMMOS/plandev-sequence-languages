@@ -93,7 +93,7 @@ The tooltip system is implemented in `fprime-tooltip.ts` and follows the same pa
 The tooltip extension is automatically included when using the fprime language in Phoenix:
 
 ```typescript
-import { fprimeLanguage } from '@nasa-jpl/aerie-sequence-languages';
+import { fprimeLanguage } from '@nasa-jpl/plandev-sequence-languages';
 
 // Tooltips are automatically included in the language extensions
 const extensions = fprimeLanguage.getEditorExtension(context, resources);
@@ -102,7 +102,7 @@ const extensions = fprimeLanguage.getEditorExtension(context, resources);
 Or manually:
 
 ```typescript
-import { fprimeTooltip } from '@nasa-jpl/aerie-sequence-languages';
+import { fprimeTooltip } from '@nasa-jpl/plandev-sequence-languages';
 
 const tooltipExtension = fprimeTooltip(commandDictionary, resources);
 ```

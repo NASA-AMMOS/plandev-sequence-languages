@@ -2,7 +2,7 @@ import { syntaxTree } from '@codemirror/language';
 import type { Diagnostic } from '@codemirror/lint';
 import type { EditorView } from '@codemirror/view';
 import type { SyntaxNode } from '@lezer/common';
-import type { CommandDictionary } from '@nasa-jpl/aerie-ampcs';
+import type { CommandDictionary } from '@nasa-jpl/plandev-ampcs';
 import { distance } from 'fastest-levenshtein';
 import { getChildrenNode, getFromAndTo } from '../../utils/tree-utils.js';
 import { pluralize } from '../../utils/string.js';

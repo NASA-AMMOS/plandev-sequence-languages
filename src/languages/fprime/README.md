@@ -86,7 +86,7 @@ import {
   getFprimeExtensions,
   FPRIME_NODES,
   FPrimeCommandInfoMapper
-} from '@nasa-jpl/aerie-sequence-languages';
+} from '@nasa-jpl/plandev-sequence-languages';
 ```
 
 ### Parser
@@ -116,7 +116,7 @@ const extensions = language.getEditorExtension(context, resources);
 The `FPrimeCommandInfoMapper` provides utilities for the Phoenix UI command panel:
 
 ```typescript
-import { FPrimeCommandInfoMapper } from '@nasa-jpl/aerie-sequence-languages';
+import { FPrimeCommandInfoMapper } from '@nasa-jpl/plandev-sequence-languages';
 
 const mapper = new FPrimeCommandInfoMapper();
 
@@ -135,7 +135,7 @@ const argNodes = mapper.getArgumentsFromContainer(argsNode);
 ### Tree Traversal
 
 ```typescript
-import { FPRIME_NODES } from '@nasa-jpl/aerie-sequence-languages';
+import { FPRIME_NODES } from '@nasa-jpl/plandev-sequence-languages';
 
 const tree = fprimeParser.parse(text);
 const cursor = tree.cursor();
@@ -170,7 +170,7 @@ This module includes utilities to convert F-Prime JSON command dictionaries (FPP
 ### Usage
 
 ```typescript
-import { parseFPrimeJsonToAmpcsXml } from '@nasa-jpl/aerie-sequence-languages';
+import { parseFPrimeJsonToAmpcsXml } from '@nasa-jpl/plandev-sequence-languages';
 
 // F-Prime JSON dictionary (from FPP compiler)
 const fprimeJson = JSON.stringify({
