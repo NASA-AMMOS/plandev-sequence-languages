@@ -1,7 +1,7 @@
 import type { SyntaxNode } from '@lezer/common';
 import { Tree } from '@lezer/common';
-import type { CommandDictionary, FswCommandArgument } from '@nasa-jpl/aerie-ampcs';
-import { getBalancedDuration, parseDurationString, validateTime, TimeTypes } from '@nasa-jpl/aerie-time-utils';
+import type { CommandDictionary, FswCommandArgument } from '@nasa-jpl/plandev-ampcs';
+import { getBalancedDuration, parseDurationString, validateTime, TimeTypes } from '@nasa-jpl/plandev-time-utils';
 import { SatfSasfParser } from '../languages/satf/grammar/satf-sasf.js';
 import {
   quoteEscape,
