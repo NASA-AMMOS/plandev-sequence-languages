@@ -248,7 +248,7 @@ export class SeqNCommandInfoMapper implements CommandInfoMapper {
     return globalNames;
   }
 
-  formatArgumentArray(values: string[]): string {
+  formatArgumentArray(values: string[], _commandNode: SyntaxNode | null, _editorViewOrSource?: EditorView | string): string {
     return ' ' + values.join(' ');
   }
 }

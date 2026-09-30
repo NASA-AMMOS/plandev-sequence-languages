@@ -55,3 +55,11 @@ export {
 export { seqJsonLanguage } from './languages/seqjson/language.js';
 
 export { parseCdlDictionary, toAmpcsXml } from './languages/vml/cdl-dictionary.js';
+
+export { fprimeLanguage, getFprimeExtensions } from './languages/fprime/language.js';
+export { fprimeParser, getFprimeLRLanguage } from './languages/fprime/fprime.js';
+export { FPRIME_NODES } from './languages/fprime/fprime-grammar-constants.js';
+export type { FprimeNode } from './languages/fprime/fprime-grammar-constants.js';
+export { FPrimeCommandInfoMapper, getNameNode as getFprimeNameNode, getContainingCommand as getFprimeContainingCommand } from './languages/fprime/fprime-tree-utils.js';
+export { fprimeLinter } from './languages/fprime/fprime-linter.js';
+export { fprimeTooltip } from './languages/fprime/fprime-tooltip.js';

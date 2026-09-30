@@ -1,0 +1,96 @@
+@top Sequence {
+  optSpace
+  (Command | CommentLine)*
+}
+
+optSpace {
+  (newLine | whiteSpace)?
+}
+
+CommentLine {
+  LineComment newLine
+}
+
+Command {
+  TimeTag
+  CommandMnemonic
+  Args
+  LineComment?
+  newLine
+}
+
+TimeTag {
+  TimeAbsolute | TimeRelative
+}
+
+CommandMnemonic {
+  commandIdentifier
+}
+
+Args {
+  (whiteSpace arg (whiteSpace? "," whiteSpace? arg)*)?
+}
+
+arg[@isGroup=Arguments] {
+  Number | String | Identifier
+}
+
+Identifier {
+  identifier
+}
+
+@tokens {
+  // Identifiers used in arguments (e.g., enum values) do not include dots
+  identifier {
+    @asciiLetter (@asciiLetter | @digit | "_")*
+  }
+
+  // Command mnemonic can have dots for namespacing
+  commandIdentifier {
+    @asciiLetter (@asciiLetter | @digit | "_" | ".")*
+  }
+
+  // Absolute time: AYYYY-DDDTHH:MM:SS[.sss]
+  // Example: A2015-075T22:32:40.123
+  TimeAbsolute {
+    "A" @digit@digit@digit@digit "-" @digit@digit@digit "T"
+    @digit@digit ":" @digit@digit ":" @digit@digit ("." @digit+)?
+    whiteSpace
+  }
+
+  // Relative time: RHH:MM:SS[.sss]
+  // Example: R01:00:01.050
+  TimeRelative {
+    "R" @digit@digit ":" @digit@digit ":" @digit@digit ("." @digit+)?
+    whiteSpace
+  }
+
+  // String literals in double quotes
+  String {
+    '"' (!["\\] | "\\" _)* '"'
+  }
+
+  // Numbers (integers, floats, hex, etc.)
+  Number {
+    ("+" | "-")?
+    (@digit+ ("." @digit+)? | "." @digit+)
+    (("e" | "E") ("+" | "-")? @digit+)? |
+    "0x" $[0-9a-fA-F]+
+  }
+
+  // Comments start with semicolon
+  LineComment {
+    ";" ![\n\r]*
+  }
+
+  newLine {
+    ($[ \t]* "\n")+ $[ \t]* | (whiteSpace? @eof)
+  }
+
+  whiteSpace {
+    $[ \t]+
+  }
+
+  @precedence { newLine, whiteSpace }
+  @precedence { TimeAbsolute, TimeRelative, commandIdentifier }
+}

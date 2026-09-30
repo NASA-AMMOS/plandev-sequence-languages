@@ -31,7 +31,7 @@ export type ArgTextDef = {
  */
 export interface CommandInfoMapper {
   /** format string of multiple arguments */
-  formatArgumentArray(values: string[], commandNode: SyntaxNode | null): string;
+  formatArgumentArray(values: string[], commandNode: SyntaxNode | null, editorViewOrSource?: EditorView | string): string;
 
   /** get insert position for missing arguments */
   getArgumentAppendPosition(node: SyntaxNode | null): number | undefined;

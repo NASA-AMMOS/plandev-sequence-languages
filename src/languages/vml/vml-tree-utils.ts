@@ -43,7 +43,7 @@ import {
 } from './vml-constants.js';
 
 export class VmlCommandInfoMapper implements CommandInfoMapper {
-  formatArgumentArray(values: string[], commandNode: SyntaxNode | null): string {
+  formatArgumentArray(values: string[], commandNode: SyntaxNode | null, _editorViewOrSource?: EditorView | string): string {
     let prefix = ' ';
     if (commandNode?.name === RULE_TIME_TAGGED_STATEMENT) {
       const callParametersNode = commandNode.firstChild?.nextSibling?.firstChild?.getChild(RULE_CALL_PARAMETERS);

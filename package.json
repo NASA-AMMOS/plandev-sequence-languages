@@ -34,7 +34,8 @@
     "satf": "rimraf ./src/languages/satf/grammar/satf-sasf.grammar.js; lezer-generator ./src/languages/satf/grammar/satf-sasf.grammar -o ./src/languages/satf/grammar/satf-sasf.grammar.js",
     "seqn": "rimraf ./src/languages/seq-n/seq-n.grammar.js; lezer-generator ./src/languages/seq-n/seq-n.grammar -o ./src/languages/seq-n/seq-n.grammar.js",
     "vml": "rimraf ./src/languages/vml/vml.grammar.js; lezer-generator ./src/languages/vml/vml.grammar -o ./src/languages/vml/vml.grammar.js",
-    "grammar-builder": "npm run satf; npm run seqn && npm run vml",
+    "fprime": "rimraf ./src/languages/fprime/fprime.grammar.js; lezer-generator ./src/languages/fprime/fprime.grammar -o ./src/languages/fprime/fprime.grammar.js",
+    "grammar-builder": "npm run satf; npm run seqn; npm run vml; npm run fprime",
     "test": "npm run grammar-builder && vitest run",
     "build": "npm run clean; npm run grammar-builder; tsc -p tsconfig.json && tsc -p tsconfig.esm.json",
     "clean": "rimraf ./dist",
@@ -51,6 +52,8 @@
     "satf",
     "sasf",
     "seqN",
+    "fprime",
+    "f-prime",
     "sequence",
     "language"
   ],
